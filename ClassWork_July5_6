@@ -1,0 +1,98 @@
+Q1: Choose your base between 3 and 13. And write upto 3 three digit numbers in that base.
+base -> 7
+0,1,2,3,4,5,6,10,11,12,13,14,15,16,20
+
+
+Q2: Add/Substract single digit and multiple digits in your number system
+Addition => 6452 + 3546 = 13331
+Subtraction => 62054 - 36623 = 22131
+
+
+Q3: Prepare a table of single digit multiplications in your number system
+1	2	3	4	5	6
+2	4	6	11	13	15
+3	6	12	15	21	24
+4	11	15	22	26	33
+5	13	21	26	34	42
+6	15	24	33	42	51
+
+
+Q4: Multiply multiple digits in your number system
+6452 * 3546 = 34320345
+
+
+Q5: Convert 1, 10, 20, 30, 100 from your base to base10.
+1	1
+10	7
+20	14
+30	21
+100	49
+
+
+Q6. Write a strategy to convert a number in your base to base 10 in plain english or pseudo code or python
+number_7 = input("Enter a Number in Base7 : ")
+num = int(number_7)
+result = 0
+i = 0
+while(num > 0):
+    rhd = num % 10
+    num = num // 10
+    result = result + (7**i) * rhd
+    i = i + 1
+print(result)
+
+
+Q7. Write a strategy to convert a number in base N to base M in plain english or pseudo code or python
+=======================================================================================================
+def base10toBaseM(M, number):
+    m = int(M)
+    num = int(number)
+    dig = []
+    while(num > 0):
+        rhd = num % m
+        dig.append(str(rhd))
+        num = num // m
+    dig.reverse()
+    result = "".join(dig)
+    return result
+    
+def baseNtoBase10(N, number):
+    n = int(N)
+    num = int(number)
+    result = 0
+    i = 0
+    while(num > 0):
+        rhd = num % 10
+        num = num // 10
+        result = result + (n**i) * rhd
+        i = i + 1
+    return result
+    
+def baseConversion(N, M, num_N):
+    n = int(N)
+    m = int(M)
+    num = int(number_N)
+    i = 0
+    if(n<2 & m<2):
+        print("Minimum base value is 2. Please provide base value greater than 1")
+        return 0
+    else:
+        num1 = num
+        while(num1>0):
+            rd = num1 % 10
+            num1 = num1 // 10
+            if rd > n:
+                print("Input number is not in the expected base")
+                return 0
+            else:
+                continue
+        base10num = baseNtoBase10(N, number_N)
+        result = base10toBaseM(M, base10num)
+        return result
+
+N = input("Enter Base N for converting to Base M : ")
+M = input("Enter Base M :")
+number_N = input("Enter a number in Base N : ")
+convertedNum = baseConversion(N, M, number_N)
+print("Number converted : " + convertedNum)
+============================================================================================================
