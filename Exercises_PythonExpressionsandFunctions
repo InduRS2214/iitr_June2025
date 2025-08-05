@@ -1,0 +1,45 @@
+Topic: Calculate Interest (Formula -> Interest = (Principal × Rate × Time) / 100)
+
+Ans:
+def calculate_interest(principal, rate, time):
+    return (principal * rate * time) / 100
+    
+calculate_interest(1000, 5, 2)   # Output: 100.0
+calculate_interest(1500, 4.3, 3) # Output: 193.5
+calculate_interest(500, 10, 0)   # Output: 0.0
+=======================================================================================================================================
+Topic: Calculate Hypotenuse
+
+Note: When you have a right-angled triangle (a triangle where one of the angles is exactly 90 degrees), the longest side of the triangle is called the hypotenuse. It’s the side that is opposite the right angle.The other two sides (the ones that make the right angle) are usually called the base and the height (or perpendicular).To calculate the length of the hypotenuse, we use something called the Pythagorean Theorem.
+The formula is -> hypotenuse² = base² + height²
+
+Formula: hypotenuse² = base² + height² or hypotenuse = √(base² + height²) or hypotenuse = (base² + height²) ** 0.5
+
+Ans:
+def calculate_hypotenuse(base, height):
+    hypotenuse = (base**2 + height**2) ** 0.5
+    return hypotenuse
+    
+calculate_hypotenuse(3, 4)
+calculate_hypotenuse(5, 12)
+calculate_hypotenuse(0, 0)
+========================================================================================================================================
+Topic: Find Distance in 2D
+
+Note: In math, especially in geometry, we often want to calculate the distance between two points on a flat surface (called a 2D plane). Each point on this plane can be represented by two numbers:
+the x-coordinate (horizontal position)
+the y-coordinate (vertical position)
+Come up with the formula to calculate the distance between two points (x1,y1) and (x2,y2) based on the Pythagorean Theorem, just like finding the hypotenuse of a right triangle.
+
+Formula: 
+two points -> (x1,y1) and (x2,y2)
+
+
+Ans:
+import math
+def find_distance_2d(x1, y1, x2, y2):
+    distance = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+    return distance
+
+find_distance_2d(0, 0, 3, 4)     # Output: 5.0
+find_distance_2d(1, 2, 4, 6)     # Output: 5.0
