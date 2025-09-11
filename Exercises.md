@@ -941,6 +941,17 @@ are_lines_touching_or_overlapping(-10, -6, -5, -1)   # Output: False  (No touch 
 are_lines_touching_or_overlapping(-2, -7, -4, -3)    # Output: True   (Overlap from -4 to -3, even with reversed inputs)
 ```
 
+**Code:**
+```
+def are_lines_touching_or_overlapping(start1, end1, start2, end2):
+    if (start1 <= start2 and start2 <= end1) or (start1 >= start2 and start2 >= end1):
+        return True
+    elif (start1 <= end2 and end2 <= end1) or (start1 <= end2 and end2 <= end1):
+        return True
+    else:
+        return False
+```
+
 ## Is a point inside a rectangle?
 
 **Topic:** *Is a Point Inside a Rectangle (with Sides Parallel to the Axes)?*
@@ -983,6 +994,15 @@ is_point_inside_rectangle(-5, -5, 5, 5, 0, 0)  # Output: True  (inside a rectang
 ```
 
 Note: **try with negative numbers** and **boundary points** to test your understanding.
+
+**Code:**
+```
+def is_point_inside_rectangle(x1, y1, x2, y2, px, py):
+    if (x1 <= px and px <= x2 and y1 <= py and py <= y2) or (x1 >= px and px >= x2 and y1 >= py and py >= y2):
+        return True
+    else:
+        return False
+```
 
 
 ## Are rectangles (with sides parallel to axes) intersecting?
